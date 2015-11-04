@@ -1,0 +1,58 @@
+
+<h1>Add New Movie</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', movies_path %>
+
+
+<br>
+<h2> Or search for movie to add</h2>
+<input type="text" id="search" name="search">
+<input type="submit" value="Search" id="hithere">
+<input type="submit" id="pick" value="Pick">
+<ul id ="orders"></ul>
+<img id='poster'></img>
+
+<script>
+$( "#hithere" ).on( "click", function() {
+
+console.log("jquery workin");
+// var Title ="Speed";
+  var Title = ($("#search").val());
+$(function () {
+
+  var $orders = $('#orders');
+  var $poster = $('#poster');
+$.ajax({
+  type: 'GET',
+  // url: 'http://www.omdbapi.com/?t=spy&y=&plot=full&r=json&tomatoes=true',
+   url: "http://www.omdbapi.com/?t=" + Title,
+
+
+  success: function(orders) {
+     console.log("title" +Title)
+      console.log(orders); //returns all of johnbob's friends
+      $orders.empty();
+
+      $orders.append('<li id="titleexport">'+ orders.Title  +'</li>' );
+      $orders.append('<li>'+ orders.Actors  +'</li>' );
+      $orders.append('<li>'+ orders.Director +'</li>' );
+      $orders.append('<li>'+ orders.Title   + orders.Plot +'</li>' );
+      $orders.append('<img src = " '+ orders.Poster +'""</>' );
+
+  }
+});
+
+});
+});
+
+$( "#pick" ).on( "click", function() {
+alert("hi");
+  var $test = $('#titleexport');
+  alert($test);
+
+$("#titleimport").html($("#titleexport").html())
+
+});
+</script>
