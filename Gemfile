@@ -23,7 +23,7 @@ gem 'bootstrap-sass', '~> 3.3.5.1'
 gem 'jquery-rails'
 
 group :development do
-  gem 'pg'
+  gem 'sqlite3'
 end
 
 group :production do
