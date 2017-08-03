@@ -3,6 +3,12 @@ class MoviesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
   def index
     @movies = Movie.all
+    if params[:search]
+      @movies = Movie.search(params[:search]).order("created_at DESC")
+    else
+      @movies = Movie.all.order('created_at DESC')
+    end
+    # byebug
   end
 
   def show
@@ -62,6 +68,6 @@ class MoviesController < ApplicationController
     end
 
     def movie_params
-      params.require(:movie).permit(:title, :description, :movie_length, :director, :rating, :image)
+      params.require(:movie).permit(:title, :description, :movie_length, :director, :rating, :image, :search)
     end
 end
