@@ -16864,3 +16864,68 @@ Processing by MoviesController#index as HTML
 Completed 200 OK in 643ms (Views: 632.5ms | ActiveRecord: 1.4ms)
 
 
+Started GET "/movies/1" for ::1 at 2017-08-03 19:29:13 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.9ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? ORDER BY created_at DESC[0m  [["movie_id", 1]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 1]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (14.8ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (13.3ms)
+Completed 200 OK in 484ms (Views: 465.9ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/" for ::1 at 2017-08-03 20:00:56 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY created_at DESC[0m
+  Rendered movies/index.html.erb within layouts/application (24.8ms)
+  Rendered layouts/_header.html.erb (6.3ms)
+Completed 200 OK in 479ms (Views: 465.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/movies/new" for ::1 at 2017-08-03 20:01:21 -0400
+Processing by MoviesController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering movies/new.html.erb within layouts/application
+  Rendered movies/_form.html.erb (40.4ms)
+  Rendered movies/new.html.erb within layouts/application (45.3ms)
+  Rendered layouts/_header.html.erb (6.7ms)
+Completed 200 OK in 560ms (Views: 530.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/edit" for ::1 at 2017-08-03 20:01:22 -0400
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/registrations/edit.html.erb within layouts/application (28.2ms)
+  Rendered layouts/_header.html.erb (6.3ms)
+Completed 200 OK in 511ms (Views: 499.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2017-08-03 20:01:23 -0400
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY created_at DESC[0m
+  Rendered movies/index.html.erb within layouts/application (25.0ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+Completed 200 OK in 475ms (Views: 466.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/movies/2" for ::1 at 2017-08-03 20:12:04 -0400
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."movie_id" = ? ORDER BY created_at DESC[0m  [["movie_id", 2]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT AVG("reviews"."rating") FROM "reviews" WHERE "reviews"."movie_id" = ?[0m  [["movie_id", 2]]
+  Rendering movies/show.html.erb within layouts/application
+  Rendered movies/show.html.erb within layouts/application (8.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (14.0ms)
+Completed 200 OK in 501ms (Views: 473.7ms | ActiveRecord: 1.9ms)
+
+
