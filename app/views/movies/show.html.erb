@@ -4,7 +4,7 @@
       <div class="col-md-4">
         <%= image_tag @movie.image.url %>
 
-        <div class="star-rating" data-score= <%= @avg_review %> ></div>
+        <div class="star-rating" data-score=<%=@avg_review %> ></div>
             <em><%= "#{@reviews.length} reviews" %></em>
 
           <div class="table-responsive">
